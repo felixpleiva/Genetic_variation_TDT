@@ -13,22 +13,25 @@
 # Cleaning working space
 rm(list=ls())
 today<-format(Sys.Date(),"%Y%m%d")
-# ------------------------------------------------------------
-setwd("C:/Users/Invunche/Dropbox/GitHub/Genetic_variation_TDT/Data")
-getwd()# check directory
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# set the working directory to the folder containing this script:
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# ------------------------------------------------------------------------------
+# check directory
+getwd()
+# ------------------------------------------------------------------------------
 #Libraries
 library(xlsx)
 library(dplyr)
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
 #read data of survival time
-datos<-read.xlsx("TDT_DGRP_lines.xlsx", sheetName = "results on TDT available")
+datos<-read.xlsx("../Data/TDT_DGRP_lines.xlsx", sheetName = "results on TDT available")
 
 #Check data structure
 str(datos)
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # convert variables
-datos$NUMBER_STOCK<-as.factor(datos$NUMBER_STOCK) 
+datos$NUMBER_STOCK<-as.factor(datos$NUMBER_STOCK)
 datos$FLASK_NUMBER<-as.factor(datos$FLASK_NUMBER) 
 datos$STRESS_TEMP<-as.numeric(datos$STRESS_TEMP) 
 datos$RUN_NUMBER<-as.factor(datos$RUN_NUMBER) 
@@ -46,47 +49,46 @@ datos$GENOTYPE<-as.factor(datos$GENOTYPE)
 datos$SEX<-as.factor(datos$SEX)
 datos$VIDEO_NAME<-as.factor(datos$VIDEO_NAME)
 datos$DATE_REV<-as.factor(datos$DATE_REV)
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # check again
 str(datos)
 head(datos)
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # convert survival time to decimal of minutes
 datos$surv.time<-log10(datos$TIME_SURV_MIN+(datos$TIME_SURV_SEC/60))
 datos$video.time<-log10(datos$VIDEO_DURATION_MIN+(datos$VIDEO_DURATION_SEC/60))
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
+#Select only flies measured at 21 KPa
+datos<-filter(datos,TEST_OXYGEN==21)
+
 #select columns of interest
 names(datos)
 datos2<-datos[c(2:7,9,10,13,18:28)]
-# ------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
 #Rename columns
 names(datos2)
 names(datos2)[c(1:20)] = c("video.name","stock","genotype","sex","test.temp","run","date.rev",
                            "id.ind","criteria","reader","acclim.temp","date.exp",
                            "age","test.oxygen","acclim.oxygen","acclim.time","plate.id","well.id","surv.time","video.time")
 head(datos2)
-# ------------------------------------------------------------
-#Select only flies measured at 21 KPa
-all.21<-filter(datos2,test.oxygen==21)
-
-# ------------------------------------------------------------
-# Transform variables wrongly assigned (21 kPa)
-str(all.21)
-all.21$date.exp<-as.factor(all.21$date.exp)
-# ------------------------------------------------------------
+# ------------------------------------------------------------------------------
 #median per reader at 21 kPa
-all.21<-aggregate(cbind(surv.time,video.time)~stock+genotype+
+tdt<-aggregate(cbind(surv.time,video.time)~stock+genotype+
                     video.name+sex+test.temp+run+id.ind+acclim.temp+
                     date.exp+age+test.oxygen+acclim.oxygen+acclim.time,
-                  data=all.21,median)
-#------------------------------------------------------------
+                  data=datos2,median)
+#-------------------------------------------------------------------------------
+# Transform variables wrongly assigned
+str(tdt)
+tdt$date.exp<-as.factor(tdt$date.exp)
+# ------------------------------------------------------------------------------
 #export data frames for future analyses
-setwd("C:/Users/Invunche/Dropbox/GitHub/Genetic_variation_TDT/Outputs")
-write.csv(all.21, "0.1.1. Survival time of Drosophila melanogaster across DGRP lines.csv",row.names=FALSE)
+write.csv(tdt, "../Outputs/0.1.1. Survival time of Drosophila melanogaster across DGRP lines.csv",row.names=FALSE)
 #-------------------------------------------------------------------------------
 #saving session information with all package' versions for reproducibility
 #purposes
-sink("C:/Users/Invunche/Dropbox/GitHub/genetic_variation_TDT/Outputs/0.1.3. Exploratory_analysis_TDT_R_session.txt")
+sink("../Outputs/0.1.2. Exploratory_analysis_TDT_R_session.txt")
 sessionInfo()
 sink()
 ################################################################################
