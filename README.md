@@ -4,7 +4,7 @@ This repository contains code and data needed to reproduce the manuscript: Féli
 
 ## Cite the repository as: 
 
-Leiva FP, Santos M, Rezende EL & Verberk WCEP. (2022). Draft version of paper data and code of manuscript: Genetic variation on heat tolerance in a model ectotherm. Zenodo. DOI is coming.
+Leiva FP, Santos M, Rezende EL & Verberk WCEP. (2022). Data and code of manuscript: Genetic variation on heat tolerance in a model ectotherm. Zenodo. DOI is coming.
 
 
 ## Notes:
