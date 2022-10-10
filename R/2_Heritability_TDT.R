@@ -20,71 +20,41 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # check directory
 getwd()
 # ------------------------------------------------------------------------------
-#Libraries
-library(nlme)
+#Load data for pooled sex
+p<-read.csv("../Outputs/1.1.1. Rescaled survival probability of DGRP lines pooled.csv")
+#Load data for females
+f<-read.csv("../Outputs/1.1.2. Rescaled survival probability of DGRP lines females.csv")
+#Load data for males
+m<-read.csv("../Outputs/1.1.3. Rescaled survival probability of DGRP lines males.csv")
 # ------------------------------------------------------------------------------
-#Load data
-tdt<-read.csv("../Outputs/0.1.1. Survival time of Drosophila melanogaster across DGRP lines.csv")
+# Line as factor
+p$Line<-as.factor(p$Line)
+f$Line<-as.factor(f$Line)
+m$Line<-as.factor(m$Line)
 # ------------------------------------------------------------------------------
-#stock as factor
-str(tdt)
-tdt$stock<-as.factor(tdt$stock)
-# ------------------------------------------------------------------------------
-# subset by sex
-data_f<-subset(tdt,sex=="female") #females
-data_m<-subset(tdt,sex=="male") #males
-#-------------------------------------------------------------------------------
-# fit 0 estimate the random effect for line only
-fit0<-lme(surv.time ~ 1, random=~1|stock, data=tdt)
+# Broad-sense heritability across females and females
+fit.p<-lm(value~Line,data=p)
+summary(fit.p)
+anova(fit.p)
+round(120505/(120505+343278),3) #genetic variation for pooled sex = 0.26
+round(mean(p$value),3) # mean of survival probability for pooled sex
+round(sd(p$value)/sqrt(length((p$value))),3) # SE of survival probability for pooled sex
 
-# fit1 estimate the among-line variance after accounting for temperature
+# Broad-sense heritability of females
+fit.f<-lm(value~Line,data=f)
+summary(fit.f)
+anova(fit.f)
+round(92843/(92843+148454),3) #genetic variation for females = 0.385
+round(mean(f$value),3) # mean of survival probability for females
+round(sd(f$value)/sqrt(length((f$value))),3) # SE of survival probability for females
 
-fit1<-lme(surv.time ~ test.temp, random=~1|stock, data=tdt)
-summary(fit1)
-var_Gene2<-as.numeric(VarCorr(fit1)[1,1])
-var_Resid2<-as.numeric(VarCorr(fit1)[2,1])
-
-# Estimate heritability as stock / (stock + residual + temperature) * 100
-Herit2<-var_Gene2 / (var_Gene2 + var_Resid2) * 100
-Herit2 #19.26856
-
-# The residual (unexplained variance)
-Unexpl.<-var_Resid2 / (var_Gene2 + var_Resid2) * 100
-Unexpl.#80.73144
-
-####### fit2 estimate among strain variance in response to temperature
-
-fit2<-lme(surv.time ~ test.temp, random=~test.temp|stock, data=tdt)
-summary(fit2)
-anova(fit1, fit2)
-# AIC drops through the floor, and improved LR
-
-# Estimate the heritability conditional on the environment
-
-# On the NF diet as Intercept / (Intercept + Residual)
-var_NF<-as.numeric(VarCorr(fit2)[1,1])
-residual_var<-as.numeric(VarCorr(fit2)[5,1])
-HeritNF<-var_NF / (var_NF + residual_var) * 100
-HeritNF
-
-# var HCD <- (Intercept + HCD + 2cov)
-diet_k<-2
-var_HCD<-(as.numeric(VarCorr(fit2)[1,1]) + as.numeric(VarCorr(fit2)[2,1]) + 2 * as.numeric(VarCorr(fit2)[2,3]) * as.numeric(VarCorr(fit2)[1,2]) * as.numeric(VarCorr(fit2)[2,2]))
-HeritHCD<-var_HCD / (var_HCD + residual_var) * 100
-HeritHCD
-
-# On the HFD: lme(ln_survival ~ relevel(diet, ref="HFD"), random=~relevel(diet, ref="HFD")|line, data=data)
-var_HFD<-(as.numeric(VarCorr(fit2)[1,1]) + as.numeric(VarCorr(fit2)[3,1]) + 2 * as.numeric(VarCorr(fit2)[3,3]) * as.numeric(VarCorr(fit2)[1,2]) * as.numeric(VarCorr(fit2)[3,2]))
-HeritHFD<-var_HFD / (var_HFD + residual_var) * 100
-HeritHFD
-
-# On the HPD: lme(ln_survival ~ relevel(diet, ref="HPD"), random=~relevel(diet, ref="HPD")|line, data=data)
-var_HPD<-(as.numeric(VarCorr(fit2)[1,1]) + as.numeric(VarCorr(fit2)[4,1]) + 2 * as.numeric(VarCorr(fit2)[4,3]) * as.numeric(VarCorr(fit2)[1,2]) * as.numeric(VarCorr(fit2)[4,2]))
-HeritHPD<-var_HPD / (var_HPD + residual_var) * 100
-HeritHPD
-
-
-round((summary(fit2)$adj.r.squared)*100,digits=3)#76.105
+# Broad-sense heritability of males
+fit.m<-lm(value~Line,data=m)
+summary(fit.m)
+anova(fit.m)
+round(55410/(55410+136805),3) #genetic variation for males = 0.288
+round(mean(m$value),3) # mean of survival probability for males
+round(sd(m$value)/sqrt(length((m$value))),3) # SE of survival probability for males
 #-------------------------------------------------------------------------------
 #saving session information with all packages versions for reproducibility
 #purposes
