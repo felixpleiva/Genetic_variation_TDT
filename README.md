@@ -1,6 +1,6 @@
 # Genetic variation on heat tolerance in a model ectotherm
  
-This repository contains code and data needed to reproduce the manuscript: Félix P Leiva, Mauro Santos Enrico L Rezende & Wilco CEPVerberk. Genetic variation on heat tolerance in a model ectotherm. 
+This repository contains code and data needed to reproduce the manuscript: Félix P Leiva, Mauro Santos, Enrico L Rezende & Wilco CEPVerberk. Genetic variation on heat tolerance in a model ectotherm. 
 
 ## Cite the repository as: 
 
