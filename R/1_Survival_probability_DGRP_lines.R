@@ -553,8 +553,8 @@ mall$Stime_resc<- 10^((1/pall$z)*(pall$ctmax-pall$ta.mn)+ #log time at median Ta
 # FIGURE 1
 #-------------------------------------------------------------------------------
 {
-  pdf("../Outputs/1.2.1. Figure 1 Survival probabilities of DGRP lines.pdf",width = 6,height = 8,useDingbats = FALSE)
-  #png("../Outputs/1.2.1. Figure 1 Survival probabilities of DGRP lines.png",width = 6,height = 8,units = "in",res = 600)
+  #pdf("../Outputs/1.2.1. Figure 1 Survival probabilities of DGRP lines.pdf",width = 6,height = 8,useDingbats = FALSE)
+  png("../Outputs/1.2.1. Figure 1 Survival probabilities of DGRP lines.png",width = 6,height = 8,units = "in",res = 600)
   par(mfrow=c(3,2),tcl=-0.4, family="serif",omi=c(0,0,0,0))
   
   #Sexes pooled
