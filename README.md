@@ -1,10 +1,10 @@
 # Genetic variation on heat tolerance in a model ectotherm
  
-This repository contains code and data needed to reproduce the manuscript: Félix P Leiva, Mauro Santos, Enrico L Rezende & Wilco CEP Verberk. Genetic variation on heat tolerance in a model ectotherm. 
+This repository contains code and data needed to reproduce the manuscript: Félix P Leiva, Mauro Santos, Enrico L Rezende & Wilco CEP Verberk. Genetic variation of heat tolerance in a model ectotherm: an approach using thermal death time curves. 
 
 ## Cite the repository as: 
 
-Leiva FP, Santos M, Rezende EL & Verberk WCEP. (2022). Data and code of manuscript: Genetic variation on heat tolerance in a model ectotherm. Zenodo. DOI is coming.
+Leiva FP, Santos M, Rezende EL, & Verberk WCEP. (2024). Paper data and code for: Genetic variation of heat tolerance in a model ectotherm: an approach using thermal death times curves. Zenodo. **DOI will be available here**.
 
 
 ## Notes:
