@@ -9,7 +9,7 @@ Leiva FP, Santos M, Rezende EL & Verberk WCEP. (2022). Data and code of manuscri
 
 ## Notes:
 All processing was done in R. The R folder contains the scripts, numbered consecutively, to reproduce the analyzes and generate the figure presented in the manuscript. The outputs folder contains the output files of each R scripts. The starting number of each one of these files-e.g., “0.1.1. Survival time of Drosophila melanogaster across DGRP lines.csv”- identifies the source script, in this case "0_Exploratory_analysis_TDT.r".
-To replicate the analyses of the paper, go to the 
+To replicate the analyses of the paper, go to the [`R folder`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/R) and run the scripts in correlative order.
 
 ### Folders:
 [`Data`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Data): contain the data which used for the analyses and which are published in [Functional Ecology](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2435.14485)
