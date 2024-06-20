@@ -4,7 +4,7 @@ This repository contains code and data needed to reproduce the manuscript: Féli
 
 ## Cite the repository as: 
 
-Leiva FP, Santos M, Niklitschek EJ, Rezende EL & Verberk WCEP. (2024). Paper data and code for: Genetic variation of heat tolerance in a model ectotherm: an approach using thermal death times curves. Zenodo. **DOI will be available here**.
+Leiva FP, Santos M, Niklitschek EJ, Rezende EL & Verberk WCEP. (2024). Paper data and code for: Genetic variation of heat tolerance in a model ectotherm: an approach using thermal death times curves. Zenodo. https://doi.org/10.5281/zenodo.12155988.
 
 ## Notes:
 All processing was done in R. The R folder contains the scripts, numbered consecutively, to reproduce the analyzes and generate the figure presented in the manuscript.
