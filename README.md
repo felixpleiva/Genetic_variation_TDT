@@ -12,7 +12,7 @@ All processing was done in R. The R folder contains the scripts, numbered consec
 **To replicate the analyses of the paper, go to the [`R folder`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/R) and run the scripts in correlative order**.
 
 ### Folders:
-[`Data`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Data): contain the data which used for the analyses and which are published in [Functional Ecology](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2435.14485)
+[`Data`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Data): contain data used for analyses.
 
 [`Outputs`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Outputs): contain the ouputs files after run the different R scripts.
 
