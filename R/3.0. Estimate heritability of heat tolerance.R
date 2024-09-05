@@ -1,14 +1,15 @@
 # ------------------------------------------------------------------------------
-# This script adapt a matlab to R. Code estimate heritability for heat tolerance
-# of DGRP lines. # Originally, the matlab code was written by Mauro Santos (UAB,
+# This script adapt a matlab to R code. This code estimate heritability for heat tolerance
+# of DGRP lines.
+# Originally, the matlab code was written by Mauro Santos (UAB,
 # Spain) and then converted to R by Edwin j. Niklitschek (Universidad de Los Lagos, Chile)
 
 # Cite as:
 
-# Leiva FP, Santos M, Niklitschek EJ, Rezende EL & Verberk WCEP. (2024). Paper
+# Leiva FP, Santos M, Niklitschek EJ, Rezende EL, & Verberk WCEP. (2024). Paper
 # data and code for: Genetic variation of heat tolerance in a model ectotherm:
-# an approach using thermal death times curves. Zenodo. DOI will be available
-# here.
+# an approach using thermal death time curves. Zenodo.
+# https://doi.org/10.5281/zenodo.12155988.
 
 # Cleaning working space
 rm(list=ls())
@@ -164,7 +165,7 @@ colnames(REML) <- c("Female_estimate", "Females_Jacknife", "Females_low_95%_CI",
 REML$Method <- "REML"
 
 # Combine and export to csv
-Table_1 <- rbind(ancova, ML, REML)
-write.csv(Table_1, "../Outputs/Estimates of variance-covariance components and broad-sense heritability DGRP lines.csv", row.names = TRUE)
+Table_S1 <- rbind(ancova, ML, REML)
+write.csv(Table_S1, "../Outputs/Estimates of variance-covariance components and broad-sense heritability DGRP lines (Table_S1).csv", row.names = TRUE)
 
 ######################## END OF SCRIPT ########################################

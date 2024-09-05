@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------
+###### Genetic variation on heat tolerance in a model ectotherm ######
+-------------------------------------------------------------------------------
+Cite the repository as:
+
+Leiva FP, Santos M, Niklitschek EJ, Rezende EL & Verberk WCEP. (2024). Paper data and code for: Genetic variation of heat tolerance in a model ectotherm: an approach using thermal death times curves. Zenodo. https://doi.org/10.5281/zenodo.12155988.
+
+For any further information or to notify the author if errors are identified in the data or script, please contact Félix P. Leiva (felixpleiva@gmail.com)
+-------------------------------------------------------------------------------
+### metadata for "TDT_DGRP_lines.xlsx" stored in the Data folder ###
+
+Data on survival time for 20 DGRP lines. These data are exported from a Microsoft Access database
+
+columnHeading		description
+-------------		-----------
+IDVIDEO			Autonumeric key for a given video
+VIDEO_NAME		Video name
+NUMBER_STOCK		Stock ID as in Bloomington Stock Center
+GENOTYPE		Genotype ID as in Bloomington Stock Center
+SEX			Sex of the experimental individuals (male, female)
+STRESS_TEMP		Stress temperature in Celcius degrees
+RUN_NUMBER		Run ID for a given test temperature and date
+IDTDT			Autonumeric key for a given test
+DATE_REV		Date in which the video was checked (YYYYMMDD)
+FLASK_NUMBER		Number of flask
+TIME_SURV_MIN		Survival time in minutes
+TIME_SURV_SEC		Survival time in seconds
+CRITERIA		Criteria to define when a fly is alive. 1: Fly moves consecutively at leat 5 times frames, 2: Fly moves at least 1 body length;
+			3: Fly suddenly moves 				  
+INCLUDE			Indicate if data should be included (1) or not (0) in the analyses according to the notes made by the researcher
+NOTES			Relevant notes by the researcher
+VIDEO_DURATION_MIN	Duration of the video in minutes
+VIDEO_DURATION_SEC	Duration of the video in seconds
+READER			Inicials letters to indicate the name of the reader checking the video. FPL: Félix Patricio Leiva; CAB: Cecilia Andrea Balboa 
+ACCLIM_TEMP		Acclimation temperature in Celcius degrees
+DATE_EXP		Date of experiment (YYYYMMDD)
+AGE_DAYS		Age of the fly in days at the time of the measurement
+TEST_OXYGEN		Test oxygen in the vials, in kilopascals, during the experiment 
+ACCLIM_OXYGEN		Acclimation oxygen in kilopascals
+ACCLIM_TIME		Acclimation time in days 
+PLATE_NAME		Label of the 96-well plate to store the flies
+WELL			Indicate the well ID
+
+-------------------------------------------------------------------------------
+###############################################################################
+-------------------------------------------------------------------------------

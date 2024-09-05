@@ -105,7 +105,7 @@ m.29652<-subset(data_m,stock=="29652")
 
 {
 #pdf("../Outputs/Figure_2_Thermal_death_time_curves_DGRP_lines.pdf", width = 10, height = 5, useDingbats = FALSE)
-png("../Outputs/Figure_2_Thermal_death_time_curves_DGRP_lines.png",width = 10,height = 5,units = "in",res = 600)
+jpeg("../Outputs/Figure_1_Thermal_death_time_curves_DGRP_lines.jpeg",width = 10,height = 5,units = "in",res = 600)  
 par(mfrow=c(1,2),tcl=-0.4, family="serif",omi=c(0,0,0,0))
 
 #females
@@ -231,7 +231,7 @@ dev.off()
 
 #saving session information with all packages versions for reproducibility
 #purposes
-sink("../Outputs/Plot_Figure_2_TDT_females_and_males_R_session.txt")
+sink("../Outputs/Plot_Figure_1_TDT_females_and_males_R_session.txt")
 sessionInfo()
 sink()
 #--------------------------- END OF SCRIPT -------------------------------------
