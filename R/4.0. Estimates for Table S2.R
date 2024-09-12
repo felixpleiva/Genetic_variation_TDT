@@ -116,4 +116,4 @@ names(TableS2) <- c("DGRP line",
 
 TableS2
 # export Table S2
-write.csv(TableS2, "../Outputs/Table_2 CTmax and z per DGRP line and sex.csv", row.names = F)    
+write.csv(TableS2, "../Outputs/Table_S2 CTmax and z per DGRP line and sex.csv", row.names = F)    
