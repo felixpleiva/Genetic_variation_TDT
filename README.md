@@ -16,7 +16,7 @@ All processing was done in R. The R folder contains the scripts, numbered consec
 
 [`Outputs`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Outputs): contain the ouputs files after run the different R scripts.
 
-[`R`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/R): contain R scripts in correlative order to replicate the analyses and Fig. 1 presented in the manuscript.
+[`R`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/R): contain R scripts in correlative order to replicate the analyses, Fig. 1 and Tables S1-S2 presented in the manuscript.
 
 [`MATLAB`](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/MATLAB): contain script to estimate variance component using MATLAB.
 
