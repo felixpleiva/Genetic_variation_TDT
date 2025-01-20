@@ -24,7 +24,7 @@ All processing was done in R. The R folder contains the scripts, numbered consec
 The software and R packages associated with each script are enlisted in the corresponding [Outputs](https://github.com/felixpleiva/Genetic_variation_TDT/tree/main/Outputs) folder.
 
 ## Licence
-This repository is provided by the authors under the [MIT License](https://opensource.org/licenses/MIT).
+This repository is provided by the author under the [Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/) License.
 
 ## Further information
 For any further information, please contact me: Félix P. Leiva, email: felixpleiva@gmail.com
