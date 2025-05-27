@@ -2,7 +2,7 @@
 # This script adapt a matlab to R code. This code estimate heritability for heat tolerance
 # of DGRP lines.
 # Originally, the matlab code was written by Mauro Santos (UAB,
-# Spain) and then converted to R by Edwin j. Niklitschek (Universidad de Los Lagos, Chile)
+# Spain) and then converted to R by Edwin J. Niklitschek (Universidad de Los Lagos, Chile)
 
 # Cite as:
 
