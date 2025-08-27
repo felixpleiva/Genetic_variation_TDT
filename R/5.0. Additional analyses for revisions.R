@@ -9,6 +9,7 @@
 # Modifications: XXXXX by YYYYYYY
 
 # If you use it, please cite as:
+
 # Leiva FP, Santos M, Niklitschek EJ, Rezende EL, & Verberk WCEP. (2024). Paper
 # data and code for: Genetic variation of heat tolerance in a model ectotherm:
 # an approach using thermal death time curves. Zenodo.
